@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+<body>
+<h3 align="center" >View Faculty</h3><br><br><br>
+<form id="form1" name="form1" method="post" action="">
+  <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+{#    {% csrf_token %}#}
+  <table class="table table-hover" >
+    <tr style="background-color:#DFF9BA ">
+      <th>SL.No</th>
+      <th>Photo</th>
+      <th>KTU Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone No.</th>
+      <th>Department</th>
+      <th>Certificates</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;<img src="{{ i.photo }}" width="100" height="100"></td>
+      <td>&nbsp;{{ i.ktu_id }} </td>
+      <td>&nbsp;{{ i.fname }} {{ i.lname }}</td>
+      <td>{{ i.house }},<br>{{ i.place }},{{ i.post }},<br>{{ i.district }},{{ i.pin }}</td>
+      <td>{{ i.email }}</td>
+      <td>&nbsp;{{ i.phno }}</td>
+      <td>{{ i.DEPARTMENT.department }}</td>
+      <td>&nbsp;<a href="{{ i.certificate }}" download="">Download</a></td>
+      <td><a href="/myapp/editfaculty/{{ i.id }}#about">Edit</a><br>
+          <br><a href="/myapp/deletefaculty/{{ i.id }}">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+{% endblock %}
+</html>

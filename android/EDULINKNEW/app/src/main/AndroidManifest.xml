@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:requestRawExternalStorageAccess="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EDULINKNEW"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".teacher_home_hod"
+            android:exported="false"
+            android:label="@string/title_activity_teacher_home_hod"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_notification"
+            android:exported="false"
+            android:label="NOTIFICATION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_notification"
+            android:exported="false"
+            android:label="NOTIFICATION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_notification"
+            android:exported="false"
+            android:label="NOTIFICATION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".notification"
+            android:exported="false"
+            android:label="NOTIFICATION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_chat_students"
+            android:exported="false"
+            android:label="CHAT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_assignments_uploads"
+            android:exported="false"
+            android:label="ASSIGNMENT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_assignment"
+            android:exported="false"
+            android:label="ASSIGNMENT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_upload_assignment"
+            android:exported="false"
+            android:label="ASSIGNMENT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_assignment"
+            android:exported="false"
+            android:label="ASSIGNMENT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_add_assignment"
+            android:exported="false"
+            android:label="ASSIGNMENT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_studymaterial"
+            android:exported="false"
+            android:label="STUDY MATERIALS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Hod_viewsubject"
+            android:exported="false"
+            android:label="VIEW SUBJECTS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_view_studymaterial"
+            android:exported="false"
+            android:label="STUDY MATERIALS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_upload_study_material"
+            android:exported="false"
+            android:label="STUDY MATERIALS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_upload_medical_certi"
+            android:exported="false"
+            android:label="MEDICAL LEAVE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_medical_leave"
+            android:exported="false"
+            android:label="MEDICAL LEAVE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".students_view_leave"
+            android:exported="false"
+            android:label="MEDICAL LEAVE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_medical_leave"
+            android:exported="false"
+            android:label="MEDICAL LEAVE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_calender"
+            android:exported="false"
+            android:label="CALENDAR">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_view_internal"
+            android:exported="false"
+            android:label="INTERNALS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view_academic_calendar"
+            android:exported="false"
+            android:label="CALENDAR">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_internal"
+            android:exported="false"
+            android:label="View Internals">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_add_internal"
+            android:exported="false"
+            android:label="ADD INTERNALS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_add_exam"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Substition_view"
+            android:exported="false"
+            android:label="SUBSTITUTION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_substitution"
+            android:exported="false"
+            android:label="VIEW SUBSTITUTION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_attendance_percentage"
+            android:exported="false"
+            android:label="ATTEDANCE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".attendance_home"
+            android:exported="false"
+            android:label="ATTENDANCE"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_overallattendance"
+            android:exported="false"
+            android:label="ATTEDANCE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".students_view_attendance"
+            android:exported="false"
+            android:label="ATTENDANCE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Test"
+            android:exported="false"
+            android:label="Chat">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Test_student_tutor"
+            android:exported="false"
+            android:label="Chat with tutor">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_add_substitution"
+            android:exported="false"
+            android:label="SUBSTITUTION">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_attendance"
+            android:exported="false"
+            android:label="ATTENDANCE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".hod_view_students"
+            android:exported="false"
+            android:label="STUDENTS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_subjects"
+            android:exported="false"
+            android:label="SUBJECTS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_attendance"
+            android:exported="false"
+            android:label="ATTENDANCE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".changepassword_students"
+            android:exported="false"
+            android:label="CHANGE PASSWORD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_view_timetable"
+            android:exported="false"
+            android:label="TIMETABLE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_view_timetable"
+            android:exported="false"
+            android:label="TIMETABLE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_timetable"
+            android:exported="false"
+            android:label="TIMETABLE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".timetable"
+            android:exported="false"
+            android:label="TIMETABLE">
+
+            <!-- <meta-data -->
+            <!-- android:name="android.app.lib_name" -->
+            <!-- android:value="" /> -->
+        </activity>
+        <activity
+            android:name=".add_timetable"
+            android:exported="false"
+            android:label="ADD TIMETABLE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view_timetable"
+            android:exported="false"
+            android:label="TIMETABLE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_view_students"
+            android:exported="false"
+            android:label="STUDENTS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_edit_students"
+            android:exported="false"
+            android:label="Update Student Information">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_update_students"
+            android:exported="false"
+            android:label="Update Student Information">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_add_students"
+            android:exported="false"
+            android:label="ADD STUDENTS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_view_class"
+            android:exported="false"
+            android:label="VIEW CLASS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Hodviewsubjectallocation"
+            android:exported="false"
+            android:label="Subject Allocations">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".subjectallocation"
+            android:exported="false"
+            android:label="Subject Allocations">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".viewsubject"
+            android:exported="false"
+            android:label="SUBJECT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".allocatesubject"
+            android:exported="false"
+            android:label="SUBJECT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".changepassword_teacher"
+            android:exported="false"
+            android:label="CHANGE PASSWORD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".changepassword_tutor"
+            android:exported="false"
+            android:label="CHANGE PASSWORD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".addsubject"
+            android:exported="false"
+            android:label=" ADD SUBJECT">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".changepassword"
+            android:exported="false"
+            android:label="CHANGE PASSWORD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Profile"
+            android:exported="false"
+            android:label="PROFILE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Hometutuor"
+            android:exported="false"
+            android:label="@string/title_activity_hometutuor"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_profile"
+            android:exported="false"
+            android:label="PROFILE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_profile"
+            android:exported="false"
+            android:label="PROFILE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_profile"
+            android:exported="false"
+            android:label="PROFILE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".hod_profile"
+            android:exported="false"
+            android:label="PROFILE">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".student_home"
+            android:exported="false"
+            android:label="@string/title_activity_student_home"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_home"
+            android:exported="false"
+            android:label="Teacher Home"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tutor_home"
+            android:exported="false"
+            android:label="@string/title_activity_tutor_home"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HOD_home"
+            android:exported="false"
+            android:label="HOD Home"
+            android:theme="@style/Theme.EDULINKNEW.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".login"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ip"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".teacher_view_students"
+            android:exported="true"
+            android:label="STUDENTS">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <uses-library android:name="org.apache.http.legacy" />
+    </application>
+
+</manifest>

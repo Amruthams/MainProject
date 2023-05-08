@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+
+<h3 align="center" >View Notification</h3><br><br><br>
+
+<body>
+
+
+
+
+<form id="form1" name="form1" method="post" action="/myapp/viewnotification_post/">
+  <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+    <table class="table table-hover">
+        <tr>
+            <th>FROM</th><td><input type="date" name="d1" class="form-control" required></td>
+            <th>TO</th><td><input type="date" name="d2" class="form-control" required></td>
+            <td><input type="submit" name="s1" value="GO" class="btn btn-outline-success"></td>
+        </tr>
+    </table>
+
+ <table class="table table-hover" >
+    <tr style="background-color:#DFF9BA ">
+      <td>SL.No</td>
+      <td>Date</td>
+      <td>Notification</td>
+
+
+      <td>&nbsp;</td>
+    </tr>
+     {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}&nbsp;</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.notification }}</td>
+
+
+
+      <td>
+      <a href="/myapp/deletenotification/{{ i.id }}#about ">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+</html>

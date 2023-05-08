@@ -1,0 +1,86 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+<body>
+<h3 align="center" >Add Batches</h3><br><br><br>
+<form id="form1" name="form1" method="post" action="/myapp/addbatch_post/">
+   <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+    {% csrf_token %}
+  <table class="table table-borderless table-hover" >
+
+    <tr>
+      <th width="100">Program</th>
+      <td>
+        <select name="select" id="select" class="form-control" required>
+            {% for i in data %}
+                <option value="{{ i.id }}">{{ i.pname }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <td>
+        <select name="select2" id="select2" class="form-control" required>
+            {% for i in d %}
+                <option>{{ i }}-{{i|add:2 }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+{#    <tr>#}
+{#      <th>Tutor</th>#}
+{#      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>#}
+{#    </tr>#}
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button"  class="btn btn-danger"  value="Add" style="border-radius: 5px ;width:150px" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+{#     <script type="text/javascript"#}
+{#             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>#}
+{#       <script>#}
+{##}
+{#   $(document).ready(function () {#}
+{##}
+{#        $("#button").prop('disabled', true);#}
+{##}
+{##}
+{#       $(document).on('keyup','#select2',function () {#}
+{##}
+{##}
+{#           var cc=$("#select2").val();#}
+{##}
+{##}
+{#           $.getJSON("/myapp/admincheckbatch/",{#}
+{#                c:cc#}
+{##}
+{##}
+{#               },function (data) {#}
+{##}
+{##}
+{#                if(data["status"]=="ok"){#}
+{##}
+{#                   $("#button").prop('disabled', false);#}
+{#                     $("#h6").text("");#}
+{##}
+{##}
+{#               }else {#}
+{#                    $("#button").prop('disabled', true);#}
+{#                     $("#h6").text("Already exists");#}
+{##}
+{#               }#}
+{#               });#}
+{##}
+{#       });#}
+{#{);#}
+{##}
+{#   </script>#}
+
+{% endblock %}
+</html>

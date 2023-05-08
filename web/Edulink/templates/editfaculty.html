@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+<body>
+
+<h3 align="center" >Edit Faculty</h3><br><br><br>
+<form action="/myapp/editfaculty_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+    {% csrf_token %}
+  <table class="table table-bordered table-hover" >
+
+
+    <tr>
+      <td>KTU ID</td>
+
+      <td ><input type="hidden" name="h1" value="{{ data.id }}" id="textfield" />
+          <input type="text" name="textfield12" id="textfield" value="{{ data.ktu_id }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td width="100px">First Name</td>
+      <td ><input type="text" name="textfield" id="textfield" value="{{ data.fname }}"class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td><input type="text" name="textfield2" id="textfield2" value="{{ data.lname }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="fileField3" id="fileField3" value="{{ data.photo }}" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <td>DOB</td>
+      <td><input type="date" name="textfield9" id="textfield11" onchange="h()" value="{{ data.dob }}" class="form-control" required /></td>
+    </tr>
+      <tr>
+      <td>House</td>
+      <td><input type="text" name="textfield0" id="textfield4" value="{{ data.house }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="textfield4" id="textfield4" value="{{ data.place }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><input type="text" name="textfield5" id="textfield5" value="{{ data.post }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><input type="text" name="textfield6" id="textfield6" value="{{ data.pin }}" class="form-control" pattern="[0-9]{6}"  required/></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><input type="text" name="textfield7" id="textfield7" value="{{ data.district }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="textfield8" id="textfield8" value="{{ data.email }}" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required/></td>
+    </tr>
+    <tr>
+      <td>Phone No.</td>
+      <td><input type="text" name="textfield10" id="textfield10" value="{{ data.phno }}" class="form-control" pattern="^[1-9][0-9]{9}$"  required/></td>
+    </tr>
+    <tr>
+      <td>Certificates</td>
+      <td><input type="file" name="fileField" id="fileField" value="{{ data.certificate }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Department</td>
+        <td><select name="textfield11" class="form-control" required>
+            {% for i in data2 %}
+                <option value="{{ i.id }}" {%  if i.id == data.DEPARTMENT %} selected {% endif %}>{{ i.department }}</option>
+
+            {% endfor %}
+        </select></td>
+    </tr>
+    <tr>
+       <td colspan="2" align="center"><input type="submit" name="button" id="button"  class="btn btn-danger"  value="Edit" style="border-radius: 5px ;width:100px" /></td>
+    </tr>
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+
+    <script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+}
+if(mm<10){
+  mm='0'+mm
+}
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("textfield11").setAttribute("max", today);
+
+function h()
+{
+
+    var date=document.getElementById("textfield11").value;
+
+{#    document.getElementById("datefield2").setAttribute("min", date);#}
+
+}
+</script>
+
+
+
+{% endblock %}
+</html>

@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+<body>
+<h3 align="center" >View Program</h3><br><br><br>
+<form id="form1" name="form1" method="post" action="">
+  <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+{#    {% csrf_token %}#}
+  <table class="table table-hover" >
+    <tr style="background-color:#DFF9BA ">
+      <th>SL.No</th>
+      <th>Name</th>
+        <th>Department</th>
+        <th>Duration</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+
+      <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.pname }}</td>
+      <td>&nbsp;{{ i.DEPARTMENT.department }}</td>
+        <td>&nbsp;{{ i.sem }}</td>
+      <td><a href="/myapp/editprogram/{{ i.id }}#about">Edit</a><br><br>
+      <a href="/myapp/deleteprogram/{{ i.id }}#about">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+{% endblock %}
+</html>

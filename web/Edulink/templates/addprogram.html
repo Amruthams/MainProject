@@ -1,0 +1,86 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+<body>
+<h3 align="center" >Add Program</h3><br><br><br>
+<form id="form1" name="form1" method="post" action="/myapp/addprogram_post/">
+    <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+    {% csrf_token %}
+  <table class="table table-borderless table-hover" >
+
+{#      <tr>#}
+{#      <td>Code</td>#}
+{#      <td><input type="text" name="textfield2" id="textfield2" /></td>#}
+{#    </tr>#}
+    <tr>
+      <th>Department</th>
+        <td><select name="textfield3" class="form-control">
+            {% for i in data %}
+                <option value="{{ i.id }}">{{ i.department }}</option>
+            {% endfor %}
+        </select></td>
+    </tr>
+  <tr>
+      <th>Program Name</th>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+  <tr>
+      <th> Duration</th>
+      <td><input type="text" name="textfield2" id="textfield2" class="form-control" required/></td>
+    </tr>
+
+  <tr><td  ><h6 id="h6"style=" ... "> </h6></td></tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button"  class="btn btn-danger"  value="Add" style="border-radius: 5px ;width:150px" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+    <script type="text/javascript"
+             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+       <script>
+
+   $(document).ready(function () {
+
+        $("#button").prop('disabled', true);
+
+
+       $(document).on('keyup','#textfield',function () {
+
+
+           var cc=$("#textfield").val();
+
+
+           $.getJSON("/myapp/admincheckpgm/",{
+                c:cc
+
+
+               },function (data) {
+
+
+                if(data["status"]=="ok"){
+
+                   $("#button").prop('disabled', false);
+                     $("#h6").text("");
+
+
+               }else {
+                    $("#button").prop('disabled', true);
+                     $("#h6").text("Already exists");
+
+               }
+               });
+
+       });
+});
+
+   </script>
+{% endblock %}
+</html>
+
+

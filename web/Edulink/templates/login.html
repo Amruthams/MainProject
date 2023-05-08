@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<form action="/myapp/login_post/" method="post">
+    {% csrf_token %}
+<body>
+<table width="369" height="289" border="1">
+  <tr>
+    <td width="173">
+      Username</td>
+    <td width="153"><input type="text" name="textfield" id="textfield" /></td>
+  </tr>
+  <tr>
+      <td width="173">Password</td>
+    <td><input type="text" name="textfield2" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <center><td colspan="2"><input type="submit" name="button" id="button" value="Submit" /></td></center>
+  </tr>
+</table>
+</body>
+    </form>
+</html>

@@ -1,0 +1,73 @@
+{% extends 'admindash.html' %}
+{% block body %}
+    <html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<body>
+<h3 align="center" >Add Department</h3><br><br><br>
+<form id="form1" name="form1" method="post" action="/myapp/adddept_post/">
+    <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+    {% csrf_token %}
+  <table class="table table-borderless table-hover" >
+
+    <tr>
+      <th width="200">Department Name</th>
+      <td>
+      <input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+      <tr><td  ><h6 id="h6"style=" ... "> </h6></td></tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button"  class="btn btn-danger"  value="Add" style="border-radius: 5px ;width:150px" /></td>
+
+    </tr>
+
+
+  </table>
+        </div>
+</div>
+</form>
+</body>
+</html>
+    <script type="text/javascript"
+             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+       <script>
+
+   $(document).ready(function () {
+
+        $("#button").prop('disabled', true);
+
+
+       $(document).on('keyup','#textfield',function () {
+
+
+           var cc=$("#textfield").val();
+
+
+           $.getJSON("/myapp/admincheckdept/",{
+                c:cc
+
+
+               },function (data) {
+
+
+                if(data["status"]=="ok"){
+
+                   $("#button").prop('disabled', false);
+                     $("#h6").text("");
+
+
+               }else {
+                    $("#button").prop('disabled', true);
+                     $("#h6").text("Already exists");
+
+               }
+               });
+
+       });
+});
+
+   </script>
+{% endblock %}

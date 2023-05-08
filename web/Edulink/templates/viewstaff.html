@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+{% extends 'admindash.html' %}
+{% block body %}
+
+<body>
+<h3 align="center" >View Staff</h3><br><br><br>
+<form id="form1" name="form1" method="post" action="">
+  <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+ <table class="table table-hover" >
+    <tr style="background-color:#DFF9BA ">
+
+
+
+      <th>SLNo</th>
+      <th>Department</th>
+      <th>Batch</th>
+      <th>Staff</th>
+      <th>Designation</th>
+      <th>&nbsp;</th>
+    </tr>
+     {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.DEPARTMENT.department }}</td>
+      <td>&nbsp;{{ i.BATCH.year }}</td>
+      <td>&nbsp;{{ i.FACULTY.fname }} &nbsp;{{ i.FACULTY.lname }}</td>
+      <td>&nbsp;{{ i.post }}</td>
+      <td><a href="/myapp/editstaff/{{ i.id }} #about">Edit</a><br>
+      <a href="/myapp/deletestaff/{{ i.id }}">Delete</a></td>
+    </tr>
+     {% endfor %}
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,134 @@
+
+
+{% extends 'admindash.html' %}
+{% block body %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+
+
+<body>
+
+    <h3 align="center" >Add Faculty</h3><br><br><br>
+<form action="/myapp/addfaculty_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <div class="card" style="border-color: coral;border-radius:10px">
+    <div class="card-body">
+
+    {% csrf_token %}
+  <table class="table table-borderless table-hover" >
+
+    <tr>
+      <th width="70px">KTU ID</th>
+      <td ><input type="text" name="textfield12" id="textfield" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>First Name<label style="color: #bb2d3b">*</label> </th>
+      <td ><input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><input type="text" name="textfield2" id="textfield2" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Photo</th>
+      <td><input type="file" name="fileField3" id="fileField3" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <th>DOB</th>
+      <td><input type="date" name="textfield9" id="datepicker" class="form-control" onchange="h()" max='' required /></td>
+    </tr>
+      <tr>
+      <th>House</th>
+      <td><input type="text" name="textfield0" id="textfield4" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Place</th>
+      <td><input type="text" name="textfield4" id="textfield4" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Post</th>
+      <td><input type="text" name="textfield5" id="textfield5" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Pin</th>
+      <td><input type="text" name="textfield6" id="textfield6" class="form-control" pattern="[0-9]{6}" required /></td>
+    </tr>
+    <tr>
+      <th>District</th>
+      <td><input type="text" name="textfield7" id="textfield7" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><input type="text" name="textfield8" id="textfield8" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required/></td>
+    </tr>
+    <tr>
+      <th>Phone No.</th>
+      <td><input type="text" name="textfield10" id="textfield10" class="form-control" pattern="^[1-9][0-9]{9}$" required /></td>
+    </tr>
+    <tr>
+      <th>Certificates</th>
+      <td><input type="file" name="fileField" id="fileField" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Department</th>
+        <td><select name="textfield11" class="form-control">
+            {% for i in data %}
+                <option value="{{ i.id }}">{{ i.department }}</option>
+            {% endfor %}
+        </select></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" name="button" id="button"  class="btn btn-danger"  value="Add" style="border-radius: 5px ;width:150px" /></td>
+    </tr>
+  </table>
+    </div>
+    </div>
+</form>
+</body>
+
+{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>#}
+{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />#}
+{##}
+{#<script>#}
+{#var maxBirthdayDate = new Date();#}
+{#maxBirthdayDate.setFullYear( maxBirthdayDate.getFullYear() - 18 );#}
+{##}
+{#$( "#datepicker" ).datepicker({#}
+{#    dateFormat: 'dd.mm.yy',#}
+{#    changeMonth: true,#}
+{#    changeYear: true,#}
+{#    maxDate: maxBirthdayDate#}
+{#});#}
+{##}
+{#</script>#}
+
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
+yyyy = yyyy - 24;
+if(dd<10){
+  dd='0'+dd
+}
+if(mm<10){
+  mm='0'+mm
+}
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datepicker").setAttribute("max", today);
+
+function h() {
+
+    var date = document.getElementById("datepicker").value;
+
+{#    document.getElementById("datefield2").setAttribute("max", date);#}
+
+}
+</script>
+
+    </html>
+{% endblock %}
+
